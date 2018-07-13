@@ -1,0 +1,1165 @@
+<div><input type="radio" name="attr_tab" class="sheet-tab sheet-tab1" value="1" checked="checked"><span title="Start Values"></span>
+<input type="radio" name="attr_tab" class="sheet-tab sheet-tab2" value="2"><span title="Attributes"></span>
+<input type="radio" name="attr_tab" class="sheet-tab sheet-tab3" value="3"><span title="Light Sub-Attributes"></span>
+<input type="radio" name="attr_tab" class="sheet-tab sheet-tab4" value="4"><span title="Dark Sub-Attributes"></span>
+<input type="radio" name="attr_tab" class="sheet-tab sheet-tab5" value="5"><span title="Defects"></span>
+<input type="radio" name="attr_tab" class="sheet-tab sheet-tab6" value="6"><span title="Gameplay"></span>
+
+<div class="sheet-tab-content sheet-tab1">
+Stat Points: <input type="number" name="attr_statPoints" value="0"/> Char Points: <input type="number" name="attr_charPoints" value="0"/><br/>
+Body: <input type="number" name="attr_bodystart" value="@{bodystart}"/> Mind: <input type="number" name="attr_mindstart" value="@{mindstart}"/> Soul: <input type="number" name="attr_soulstart" value="@{soulstart}"/> You can't have more than one stat at 12!<br/>
+Stat Points Spent: <input type="number" readonly name="attr_statPointsSpent" value="@{statPointsSpent}"/> Left: <input type="number" readonly name="attr_statPointsLeft" value="@{statPointsLeft}"/><br/>
+<input type="number" readonly name="attr_body" value="@{body}"/><input type="number" readonly name="attr_mind" value="@{mind}"/><input type="number" readonly name="attr_soul" value="@{soul}"/><br/>
+<br/>
+Derived Values<br/>
+HP: <input type="number" readonly name="attr_HP_max" value="@{HP_max}"/><br/>
+EP: <input type="number" readonly name="attr_EP_max" value="@{EP_max}"/><br/>
+ACV: <input type="number" readonly name="attr_ACV" value="@{ACV}"/> DCV: <input type="number" readonly name="attr_DCV" value="@{DCV}"/><br/>
+</div>
+
+<div class="sheet-tab-content sheet-tab2">
+Char Points Spent: <input type="number" readonly name="attr_charPointsSpent" value="@{charPointsSpent}"/> Left: <input type="number" readonly name="attr_charPointsLeft" value="@{charPointsLeft}"/> Extra: <input type="number" name="attr_charPointsBonus" value="0"/><br/>
+<select name="attr_newAttribute">
+    <option value="-1">Select an Attribute</option>
+    <option value="0">Senshi/Knight/Light Powers</option>
+    <option value="1">Negaverse/Dark Powers</option>
+    <option value="2">Acrobatics</option>
+    <option value="3">Appearance</option>
+    <option value="4">Art of Distraction</option>
+    <option value="5">Combat Mastery</option>
+    <option value="6">Damn Healthy!</option>
+    <option value="7">Divine Relationship</option>
+    <option value="8">Energy Bonus</option>
+    <option value="9">Extra Attacks</option>
+    <option value="10">Focused Combat</option>
+    <option value="11">Fortified Body</option>
+    <option value="12">Heightened Negaverse/Dark Power</option>
+    <option value="13">Heightened Senses</option>
+    <option value="14">Heightened Senshi/Knight/Light Power</option>
+    <option value="15">Massive Damage</option>
+    <option value="16">Powerful Mind</option>
+    <option value="17">Special Attack</option>
+    <option value="18">Special Defense</option>
+    <option value="19">Speed</option>
+    <option value="20">Strong Soul</option>
+    <option value="21">Supernatural Training</option>
+    <option value="22">Unique Character Attribute (Cost 1)</option>
+    <option value="23">Unique Character Attribute (Cost 2)</option>
+    <option value="24">Unique Character Attribute (Cost 3)</option>
+    <option value="25">Unique Character Attribute (Cost 4)</option>
+</select>
+Level: <input type="number" name="attr_newAttributeLevel" value="1"/>
+<input type="checkbox" value="1" name="attr_addToAttributes"/><span></span><br/>
+<br/>
+<fieldset class="repeating_attributes">
+    Name: <input type="text" name="attr_attributeName"/>
+    Level: <input type="number" name="attr_attributeLevel"/>
+    Cost: <input type="number" value="@{attr_attributeCost}" name="attr_attributeCost"/>
+    <br/> <textarea name="attr_attributeDesc"></textarea>
+    <input type="hidden" value="@{attr_attributeID}" name="attr_attributeID"/>
+</fieldset></div>
+
+<div class="sheet-tab-content sheet-tab3">
+Points: <input type="number" readonly name="attr_lightpp" value="@{lightpp}"/> Spent: <input type="number" readonly name="attr_lightPointsSpent" value="@{lightPointsSpent}"/> Left: <input type="number" readonly name="attr_lightPointsLeft" value="@{lightPointsLeft}"/> Bonus: <input type="number" readonly name="attr_betterlightpower" value="@{betterlightpower}"/> Defect: <input type="number" readonly name="attr_worselightpower" value="@{worselightpower}"/><br/>
+<select name="attr_newLightSubAttribute">
+    <option value="-1">Select a Sub-Attribute</option>
+    <option value="0">Animal Guardian</option>
+    <option value="1">Combined Attacks</option>
+    <option value="2">Elemental Control</option>
+    <option value="3">Emotional Control</option>
+    <option value="4">Item of Power</option>
+    <option value="5">Knight Attack</option>
+    <option value="6">Rejuvenation</option>
+    <option value="7">Sailor Senshi Attack</option>
+</select>
+Level: <input type="number" name="attr_newLightSubAttributeLevel" value="1"/>
+<input type="checkbox" value="1" name="attr_addToLightSubAttributes"/><span></span><br/>
+<br/>
+<fieldset class="repeating_lightSubAttributes">
+    Name: <input type="text" name="attr_lightSubAttributeName"/>
+    Level: <input type="number" name="attr_lightSubAttributeLevel"/>
+    Cost: <input type="number" value="@{attr_lightSubAttributeCost}" name="attr_lightSubAttributeCost"/>
+    <br/> <textarea name="attr_lightSubAttributeDesc"></textarea>
+    <input type="hidden" value="@{attr_lightSubAttributeID}" name="attr_lightSubAttributeID"/>
+</fieldset></div>
+
+<div class="sheet-tab-content sheet-tab4">
+Points: <input type="number" readonly name="attr_darkpp" value="@{darkpp}"/> Spent: <input type="number" readonly name="attr_darkPointsSpent" value="@{darkPointsSpent}"/> Left: <input type="number" readonly name="attr_darkPointsLeft" value="@{darkPointsLeft}"/> Bonus: <input type="number" readonly name="attr_betterdarkpower" value="@{betterdarkpower}"/> Defect: <input type="number" readonly name="attr_worsedarkpower" value="@{worsedarkpower}"/><br/>
+<select name="attr_newDarkSubAttribute">
+    <option value="-1">Select a Sub-Attribute</option>
+    <option value="0">Energy Drain</option>
+    <option value="1">Environmental Control</option>
+    <option value="2">Mind Control</option>
+    <option value="3">Negaverse Attack</option>
+    <option value="4">Negaverse Item</option>
+    <option value="5">Negaverse Magic</option>
+    <option value="6">Positive Energy Deflection</option>
+    <option value="7">Summon/Control Servant</option>
+</select>
+Level: <input type="number" name="attr_newDarkSubAttributeLevel" value="1"/>
+<input type="checkbox" value="1" name="attr_addToDarkSubAttributes"/><span></span><br/>
+<br/>
+<fieldset class="repeating_darkSubAttributes">
+    Name: <input type="text" name="attr_darkSubAttributeName"/>
+    Level: <input type="number" name="attr_darkSubAttributeLevel"/>
+    Cost: <input type="number" value="@{attr_darkSubAttributeCost}" name="attr_darkSubAttributeCost"/>
+    <br/> <textarea name="attr_darkSubAttributeDesc"></textarea>
+    <input type="hidden" value="@{attr_darkSubAttributeID}" name="attr_darkSubAttributeID"/>
+</fieldset></div>
+
+<div class="sheet-tab-content sheet-tab5">
+Bonus Points: <input type="number" readonly name="attr_flawPoints" value="@{flawPoints}"/><br/>
+<select name="attr_newFlaw">
+    <option value="-1">Select a Defect</option>
+    <option value="0">Ageism</option>
+    <option value="1">Atack Gesture</option>
+    <option value="2">Attack Restriction</option>
+    <option value="3">Attack Words</option>
+    <option value="4">Awkward</option>
+    <option value="5">Delicate Body</option>
+    <option value="6">Easily Distracted</option>
+    <option value="7">Empty Mind</option>
+    <option value="8">Hollow Soul</option>
+    <option value="9">Inept Combat</option>
+    <option value="10">Item Dependency</option>
+    <option value="11">Marked</option>
+    <option value="12">Phobia</option>
+    <option value="13">Physically Unappealing</option>
+    <option value="14">Powered After Transformation</option>
+    <option value="15">Recurring Nightmares</option>
+    <option value="16">Servitude</option>
+    <option value="17">Special Requirement</option>
+    <option value="18">Taint of the Negaverse</option>
+    <option value="19">Touched by Positive Energy</option>
+    <option value="20">Transformation Loss</option>
+    <option value="21">Unique Character Defect</option>
+    <option value="22">Weakened Negaverse/Dark Power</option>
+    <option value="23">Weakened Senshi/Knight/Light Power</option>
+</select>
+Level: <input type="number" name="attr_newFlawLevel" value="1"/>
+<input type="checkbox" value="1" name="attr_addToFlaws"/><span></span><br/>
+<br/>
+<fieldset class="repeating_flaws">
+    Name: <input type="text" name="attr_flawName"/>
+    Level: <input type="number" name="attr_flawLevel"/>
+    <br/> <textarea name="attr_flawDesc"></textarea>
+    <input type="hidden" value="@{attr_flawID}" name="attr_flawID"/>
+</fieldset></div>
+
+<div class="sheet-tab-content sheet-tab6">
+Initiative: <button type='roll' value='@{selected|token_name} rolls a [[1d6 + @{ACV} + @{speedinit} &{tracker} &{noerror}]] for Initiative!'></button><br/>
+HP: <input type="number" name="attr_HP" value=""/>/<input type="number" readonly name="attr_HP_max" value="@{HP_max}"/> EP: <input type="number" name="attr_EP" value=""/>/<input type="number" readonly name="attr_EP_max" value="@{EP_max}"/><br/>
+Rerolls left: <input type="number" name="attr_divineleft" value="0"/>/<input type="number" readonly name="attr_divine" value="@{divine}"/><br/>
+Attacks this round: <input type="number" name="attr_attacksleft" value="1"/>/<input type="number" readonly name="attr_extraactionatk" value="@{extraactionatk}"/> Defenses this round: <input type="number" name="attr_defensesleft" value="1"/>/<input type="number" readonly name="attr_extraactiondef" value="@{extraaactiondef}"/><br/>
+<button type='roll' value='@{selected|token_name} attacks [[2d6 &{noerror}]]'></button>
+</div>
+
+<!-- Hidden input fields--><div>
+<input type="hidden" name="attr_combatmastery" value="@{combatmastery}"/>
+<input type="hidden" name="attr_damnhealthy" value="@{damnhealthy}"/>
+<input type="hidden" name="attr_energybonus" value="@{energybonus}"/>
+<input type="hidden" name="attr_extraattacks" value="@{extraattacks}"/>
+<input type="hidden" name="attr_focusedcombat" value="@{focusedcombat}"/> <!--Checkbox for being active or not-->
+<input type="hidden" name="attr_fortifiedbody" value="@{fortifiedbody}"/>
+<input type="hidden" name="attr_massivedamage" value="@{massivedamage}"/> <!--Gonna need to check this in attack actions-->
+<input type="hidden" name="attr_powerfulmind" value="@{powerfulmind}"/>
+<input type="hidden" name="attr_specialattack" value="@{specialattack}"/> 
+<input type="hidden" name="attr_specialdefense" value="@{specialdefense}"/> 
+<input type="hidden" name="attr_speedinit" value="@{speedinit}"/>
+<input type="hidden" name="attr_speedcv" value="@{speedcv}"/>
+<input type="hidden" name="attr_strongsoul" value="@{strongsoul}"/>
+<input type="hidden" name="attr_awkward" value="@{awkward}"/>
+<input type="hidden" name="attr_delicatebody" value="@{delicatebody}"/>
+<input type="hidden" name="attr_emptymind" value="@{emptymind}"/>
+<input type="hidden" name="attr_hollowsoul" value="@{hollowsoul}"/>
+<input type="hidden" name="attr_ineptcombat" value="@{ineptcombat}"/>
+<input type="hidden" name="attr_lightdebuff" value="@{lightdebuff}"/> <!--Gonna need to check this in attack actions-->
+<input type="hidden" name="attr_darkdebuff" value="@{darkdebuff}"/> <!--Gonna need to check this in attack actions-->
+<input type="hidden" name="attr_freespeedlevels" value="@{freespeedlevels}"/>
+<input type="hidden" name="attr_freedistractionlevels" value="@{freedistractionlevels}"/>
+<!--<input type="hidden" name="attr_senshiattacktaken" value="@{senshiattacktaken}"/>
+<input type="hidden" name="attr_senshiattacks1" value="@{senshiattacks1}"/>
+<input type="hidden" name="attr_senshiattacks2" value="@{senshiattacks2}"/>
+<input type="hidden" name="attr_senshiattacks3" value="@{senshiattacks3}"/>
+<input type="hidden" name="attr_senshiattacks4" value="@{senshiattacks4}"/>
+<input type="hidden" name="attr_senshiattacks5" value="@{senshiattacks5}"/>
+<input type="hidden" name="attr_senshiattacks6" value="@{senshiattacks6}"/>
+<input type="hidden" name="attr_senshiattacks" value="@{senshiattacks}"/>-->
+</div>
+</div>
+<script type="text/worker">
+on("change:bodystart change:mindstart change:soulstart change:fortifiedbody change:powerfulmind change:strongsoul change:delicatebody change:emptymind change:hollowsoul", function() {
+    getAttrs(["bodystart", "mindstart", "soulstart", "fortifiedbody", "powerfulmind", "strongsoul", "delicatebody", "emptymind", "hollowsoul"], function(values) {
+        var bodymod = (parseInt(values.fortifiedbody)||0) + (parseInt(values.delicatebody)||0);
+        setAttrs({
+            body: (Math.min(Math.max(parseInt(values.bodystart) + parseInt(bodymod),1),12))
+        });
+        var mindmod = (parseInt(values.powerfulmind)||0) + (parseInt(values.emptymind)||0);
+        setAttrs({
+            mind: (Math.min(Math.max(parseInt(values.mindstart) + parseInt(mindmod),1),12))
+        });
+        var soulmod = (parseInt(values.strongsoul)||0) + (parseInt(values.hollowsoul)||0);
+        setAttrs({
+            soul: (Math.min(Math.max(parseInt(values.soulstart) + parseInt(soulmod),1),12))
+        });
+        setAttrs({
+            statPointsSpent: parseInt(values.bodystart) + parseInt(values.mindstart) + parseInt(values.soulstart)
+        });
+        setAttrs({
+            bodystart: (Math.min(Math.max(values.bodystart,1),12))
+        });
+        setAttrs({
+            mindstart: (Math.min(Math.max(values.mindstart,1),12))
+        });
+        setAttrs({
+            soulstart: (Math.min(Math.max(values.soulstart,1),12))
+        });
+    });
+});
+
+on("change:body change:mind change:soul change:damnhealthy change:energybonus change:combatmastery change:speedcv change:ineptcombat change:awkward", function() {
+    getAttrs(["body", "mind", "soul", "HP", "EP", "damnhealthy", "energybonus", "combatmastery", "speedcv", "ineptcombat", "awkward"], function(values) {
+        var hpmod = (parseInt(values.damnhealthy)||0);
+        setAttrs({
+            HP_max: ((parseInt(values.body) + parseInt(values.soul)) * 5) + parseInt(hpmod)
+        });
+        if(isNaN(parseInt(values.HP)) == true){
+            setAttrs({
+                HP: ((parseInt(values.body) + parseInt(values.soul)) * 5) + parseInt(hpmod)
+            });
+        }
+        var epmod = (parseInt(values.energybonus)||0);
+        setAttrs({
+            EP_max: ((parseInt(values.mind) + parseInt(values.soul)) * 5) + parseInt(epmod)
+        });
+        if(isNaN(parseInt(values.EP)) == true){
+            setAttrs({
+                EP: ((parseInt(values.mind) + parseInt(values.soul)) * 5) + parseInt(epmod)
+            });
+        }
+        var cvmod = (parseInt(values.combatmastery)||0) + (parseInt(values.speedcv)||0) + (parseInt(values.awkward)||0);
+        setAttrs({
+            ACV: Math.floor((parseInt(values.body) + parseInt(values.mind) + parseInt(values.soul)) / 3) + parseInt(cvmod)
+        });
+        setAttrs({
+            DCV: Math.floor((parseInt(values.body) + parseInt(values.mind) + parseInt(values.soul)) / 3) - 2 + parseInt(cvmod)
+        });
+        setAttrs({
+            freespeedlevels: Math.max((parseInt(values.body)-9),0)
+        });
+    });
+});
+
+on("change:hp change:hp_max", function() {
+    getAttrs(["HP", "HP_max"], function(values) {
+        setAttrs({
+            HP: Math.max(Math.min(values.HP,values.HP_max),0)
+        });
+    });
+});
+
+on("change:ep change:ep_max", function() {
+    getAttrs(["EP", "EP_max"], function(values) {
+        setAttrs({
+            EP: Math.max(Math.min(values.EP,values.EP_max),0)
+        });
+    });
+});
+
+on("change:statpoints change:statpointsspent", function() {
+    getAttrs(["statPoints", "statPointsSpent"], function(values) {
+        setAttrs({
+            statPointsLeft: parseInt(values.statPoints) - parseInt(values.statPointsSpent)
+        });
+        setAttrs({
+            statPoints: Math.max(values.statPoints,0)
+        });
+    });
+});
+
+on("change:charpoints change:charpointsspent change:charpointsbonus change:flawpoints", function() {
+    getAttrs(["charPoints", "charPointsSpent", "charPointsBonus", "flawPoints"], function(values) {
+        var flawbonus = (parseInt(values.flawPoints)||0);
+        setAttrs({
+            charPointsLeft: parseInt(values.charPoints) - parseInt(values.charPointsSpent) + parseInt(values.charPointsBonus) + parseInt(flawbonus)
+        });
+        setAttrs({
+            charPointsBonus: Math.max(values.charPointsBonus,0)
+        });
+        setAttrs({
+            charPoints: Math.max(values.charPoints,0)
+        });
+    });
+});
+
+on("change:lightpp change:lightpointsspent change:betterlightpower change:worselightpower", function() {
+    getAttrs(["lightpp", "lightPointsSpent", "betterlightpower", "worselightpower"], function(values) {
+        var lightppleft = (parseInt(values.lightpp)||0) - (parseInt(values.lightPointsSpent)||0) + (parseInt(values.betterlightpower)||0) + (parseInt(values.worselightpower)||0);
+        var lightppspent = (parseInt(values.lightPointsSpent)||0);
+        setAttrs({
+            lightPointsLeft: lightppleft
+        });
+        setAttrs({
+            lightPointsSpent: lightppspent
+        });
+    });
+});
+
+on("change:darkpp change:darkpointsspent change:darklightpower change:worsedarkpower", function() {
+    getAttrs(["darkpp", "darkPointsSpent", "betterdarkpower", "worsedarkpower"], function(values) {
+        var darkppleft = (parseInt(values.darkpp)||0) - (parseInt(values.darkPointsSpent)||0) + (parseInt(values.betterdarkpower)||0) + (parseInt(values.worsedarkpower)||0);
+        var darkppspent = (parseInt(values.darkPointsSpent)||0);
+        setAttrs({
+            darkPointsLeft: darkppleft
+        });
+        setAttrs({
+            darkPointsSpent: darkppspent
+        });
+    });
+});
+
+on("change:newattributelevel", function() {
+    getAttrs(["newAttributeLevel"], function(values) {
+        setAttrs({
+            newAttributeLevel: Math.max(values.newAttributeLevel,1)
+        });
+    });
+});
+
+on("change:newlightsubattributelevel", function() {
+    getAttrs(["newLightSubAttributeLevel"], function(values) {
+        setAttrs({
+            newLightSubAttributeLevel: Math.min(Math.max(values.newLightSubAttributeLevel,1),6)
+        });
+    });
+});
+
+on("change:newdarksubattributelevel", function() {
+    getAttrs(["newDarkSubAttributeLevel"], function(values) {
+        setAttrs({
+            newDarkSubAttributeLevel: Math.min(Math.max(values.newDarkSubAttributeLevel,1),6)
+        });
+    });
+});
+
+on("change:newflawlevel", function() {
+    getAttrs(["newFlawLevel"], function(values) {
+        setAttrs({
+            newFlawLevel: Math.min(Math.max(values.newFlawLevel,1),2)
+        });
+    });
+});
+
+on("change:extraattacks change:attacksleft change:defensesleft", function() {
+    getAttrs(["extraattacks"], function(values) {
+        var extraactions = (parseInt(values.extraattacks)||0);
+        setAttrs({
+            extraactionatk: parseInt(extraactions) + 1
+        });
+        setAttrs({
+            extraactiondef: parseInt(extraactions) + 1
+        });
+    });
+});
+
+//Make a new attribute
+on("change:addtoattributes", function() {
+    getAttrs(["newAttribute", "newAttributeLevel", "charPointsLeft", "freespeedlevels", "freedistractionlevels"], function(values) {
+        //Attribute Cost - Can we afford it?
+        /*var attributesCosts = [4,5,1,1,1,2,1,1,1,4,1,1,1,1,1,2,1,2,2,1,1,1,1,2,3,4];
+        var attributeTotalCost = 0;
+        var remainder = Math.max(values.newAttributeLevel%6,0);
+        var sixes = Math.max((values.newAttributeLevel-remainder)/6,0);
+        var attributeCostPerLevel = attributesCosts[values.newAttribute];
+        for (var i=0; i < sixes; i++) {
+            for (var j=0; j < 6; j++) {
+                attributeTotalCost += attributeCostPerLevel*(i+1);
+            }
+        }
+        attributeTotalCost += (attributeCostPerLevel*remainder)*(i+1);
+        
+        if(values.newAttribute == 19){
+            attributeTotalCost -= values.freespeedlevels;
+        }
+        if(values.newAttribute == 4){
+            attributeTotalCost -= values.freedistractionlevels;
+        }
+        attributeTotalCost = Math.max(attributeTotalCost,0);*/
+        
+        //if(attributeTotalCost <= values.charPointsLeft){
+            if(values.newAttribute != -1){    
+                var attributesNames = [
+                "Senshi/Knight/Light Powers","Negaverse/Dark Powers","Acrobatics","Appearance","Art of Distraction","Combat Mastery","Damn Healthy!","Divine Relationship","Energy Bonus","Extra Attacks","Focused Combat","Fortified Body","Heightened Negaverse/Dark Power","Heightened Senses","Heightened Senshi/Knight/Light Power","Massive Damage","Powerful Mind","Special Attack","Special Defense","Speed","Strong Soul","Supernatural Training","Unique Character Attribute (Cost 1)","Unique Character Attribute (Cost 2)","Unique Character Attribute (Cost 3)","Unique Character Attribute (Cost 4)"];
+                var newrowid = generateRowID();
+                var newrowname = {};
+                var newrowlevel = {};
+                var newrowattrid = {};
+                
+                //Attribute Name
+                newrowname["repeating_attributes_" + newrowid + "_attributeName"] = attributesNames[values.newAttribute];
+                setAttrs(newrowname);
+                //Attribute Level
+                newrowlevel["repeating_attributes_" + newrowid + "_attributeLevel"] = Math.max(values.newAttributeLevel,1);
+                setAttrs(newrowlevel);
+                //Attribute ID
+                newrowattrid["repeating_attributes_" + newrowid + "_attributeID"] = values.newAttribute;
+                setAttrs(newrowattrid);
+            }
+        //}
+    });
+});
+
+//Make a new light subattribute
+on("change:addtolightsubattributes", function() {
+    getAttrs(["newLightSubAttribute", "newLightSubAttributeLevel", "lightPointsLeft"], function(values) {
+        //Attribute Cost - Can we afford it?
+        /*var attributesCosts = [1,1,3,2,2,3,1,4];
+        var attributeTotalCost = 0;
+        var remainder = Math.max(values.newLightSubAttributeLevel%6,0);
+        var sixes = Math.max((values.newLightSubAttributeLevel-remainder)/6,0);
+        var attributeCostPerLevel = attributesCosts[values.newLightSubAttribute];
+        for (var i=0; i < sixes; i++) {
+            for (var j=0; j < 6; j++) {
+                attributeTotalCost += attributeCostPerLevel*(i+1);
+            }
+        }
+        attributeTotalCost += (attributeCostPerLevel*remainder)*(i+1);*/
+        
+        //if(attributeTotalCost <= values.lightPointsLeft){
+            if(values.newLightSubAttribute != -1){    
+                var attributesNames = [
+                "Animal Guardian", "Combined Attacks", "Elemental Control", "Emotional Control", "Item of Power", "Knight Attack", "Rejuvenation", "Sailor Senshi Attack"];
+                var newrowid = generateRowID();
+                var newrowname = {};
+                var newrowlevel = {};
+                var newrowattrid = {};
+                
+                //Attribute Name
+                newrowname["repeating_lightSubAttributes_" + newrowid + "_lightSubAttributeName"] = attributesNames[values.newLightSubAttribute];
+                setAttrs(newrowname);
+                //Attribute Level
+                newrowlevel["repeating_lightSubAttributes_" + newrowid + "_lightSubAttributeLevel"] = Math.min(Math.max(values.newLightSubAttributeLevel,1),6);
+                setAttrs(newrowlevel);
+                //Attribute ID
+                newrowattrid["repeating_lightSubAttributes_" + newrowid + "_lightSubAttributeID"] = values.newLightSubAttribute;
+                setAttrs(newrowattrid);
+            }
+        //}
+    });
+});
+
+//Make a new dark subattribute
+on("change:addtoDarksubattributes", function() {
+    getAttrs(["newDarkSubAttribute", "newDarkSubAttributeLevel", "darkPointsLeft"], function(values) {
+        //Attribute Cost - Can we afford it?
+        /*var attributesCosts = [1,4,2,4,3,2,2,2];
+        var attributeTotalCost = 0;
+        var remainder = Math.max(values.newDarkSubAttributeLevel%6,0);
+        var sixes = Math.max((values.newDarkSubAttributeLevel-remainder)/6,0);
+        var attributeCostPerLevel = attributesCosts[values.newDarkSubAttribute];
+        for (var i=0; i < sixes; i++) {
+            for (var j=0; j < 6; j++) {
+                attributeTotalCost += attributeCostPerLevel*(i+1);
+            }
+        }
+        attributeTotalCost += (attributeCostPerLevel*remainder)*(i+1);*/
+        
+        //if(attributeTotalCost <= values.darkPointsLeft){
+            if(values.newDarkSubAttribute != -1){    
+                var attributesNames = [
+                "Energy Drain", "Environmental Control", "Mind Control", "Negaverse Attack", "Negaverse Item", "Negaverse Magic", "Positive Energy Deflection", "Summon/Control Servant"];
+                var newrowid = generateRowID();
+                var newrowname = {};
+                var newrowlevel = {};
+                var newrowattrid = {};
+                
+                //Attribute Name
+                newrowname["repeating_darkSubAttributes_" + newrowid + "_darkSubAttributeName"] = attributesNames[values.newDarkSubAttribute];
+                setAttrs(newrowname);
+                //Attribute Level
+                newrowlevel["repeating_darkSubAttributes_" + newrowid + "_darkSubAttributeLevel"] = Math.min(Math.max(values.newDarkSubAttributeLevel,1),6);
+                setAttrs(newrowlevel);
+                //Attribute ID
+                newrowattrid["repeating_darkSubAttributes_" + newrowid + "_darkSubAttributeID"] = values.newDarkSubAttribute;
+                setAttrs(newrowattrid);
+            }
+        //}
+    });
+});
+
+//Make a new defect
+on("change:addtoflaws", function() {
+    getAttrs(["newFlaw", "newFlawLevel"], function(values) {
+        if(values.newFlaw != -1){    
+            var flawNames = [
+            "Ageism","Attack Gesture","Attack Restriction","Attack Words","Awkward","Delicate Body","Easily Distracted","Empty Mind","Hollow Soul","Inept Combat","Item Dependency","Marked","Phobia","Physically Unappealing","Powered After Transformation","Recurring Nightmares","Servitude","Special Requirement","Taint of the Negaverse","Touched by Positive Energy","Transformation Loss","Unique Character Defect","Weakened Negaverse/Dark Power","Weakened Senshi/Knight/Light Power"];
+            var newrowid = generateRowID();
+            var newrowname = {};
+            var newrowlevel = {};
+            var newrowattrid = {};
+            
+            //Attribute Name
+            newrowname["repeating_flaws_" + newrowid + "_flawName"] = flawNames[values.newFlaw];
+            setAttrs(newrowname);
+            //Attribute Level
+            newrowlevel["repeating_flaws_" + newrowid + "_flawLevel"] = Math.min(Math.max(values.newFlawLevel,1),2);
+            setAttrs(newrowlevel);
+            //Attribute ID
+            newrowattrid["repeating_flaws_" + newrowid + "_flawID"] = values.newFlaw;
+            setAttrs(newrowattrid);
+        }
+    });
+});
+
+//Update attribute details when level is changed and apparently this triggers when a new attribute is made which makes sense
+on("change:repeating_attributes:attributelevel", function(eventInfo) {
+    var attributesList = [
+    	["Senshi/Knight/Light Powers","You get 10 Power Points for Senshi/Knight/Light sub-attributes.","You get 20 Power Points for Senshi/Knight/Light sub-attributes.","You get 30 Power Points for Senshi/Knight/Light sub-attributes.","You get 40 Power Points for Senshi/Knight/Light sub-attributes.","You get 50 Power Points for Senshi/Knight/Light sub-attributes.","You get 60 Power Points for Senshi/Knight/Light sub-attributes.",4,"lightpp",10],
+    	["Negaverse/Dark Powers","You get 20 Power Points for Negaverse/Dark sub-attributes.","You get 40 Power Points for Negaverse/Dark sub-attributes.","You get 60 Power Points for Negaverse/Dark sub-attributes.","You get 80 Power Points for Negaverse/Dark sub-attributes.","You get 100 Power Points for Negaverse/Dark sub-attributes.","You get 120 Power Points for Negaverse/Dark sub-attributes.",5,"darkpp",20],
+    	["Acrobatics","You know a wide range of basic acrobatic manoeuvres.","You are skilled. Twice as talented as the previous level.","You are very skilled. Twice as talented as the previous level.","You possess world-class skill. Twice as talented as the previous level.","You possess unparalleled skill. Twice as talented as the previous level.","You possess immeasurable skill. Twice as talented as the previous level.",1,0,0],
+    	["Appearance","You are moderately attractive.","You are quite attractive.","You are very attractive.","You are extremely attractive. Art of Distraction is increased by 1 level.","You possess legendary beauty. Art of Distraction is increased by 2 levels.","You possess unparalleled beauty. Art of Distraction is increased by 3 levels.",1,"freedistractionlevels",1],
+    	["Art of Distraction","You can distract one person or animal.","You can distract up to two people or animals.","You can distract a small crowd (1-10 people or animals).","You can distract a medium crowd (11-50 people or animals).","You can distract a large crowd (50-200 people or animals).","You can distract a very large crowd (200-1000 people or animals).",1,0,0],
+    	["Combat Mastery","Your Combat Value is increased by 1 point.","Your Combat Value is increased by 2 points.","Your Combat Value is increased by 3 points.","Your Combat Value is increased by 4 points.","Your Combat Value is increased by 5 points.","Your Combat Value is increased by 6 points.",2,"combatmastery",1],
+    	["Damn Healthy!","Your HP is increased by 10.","Your HP is increased by 20.","Your HP is increased by 30.","Your HP is increased by 40.","Your HP is increased by 50.","Your HP is increased by 60.",1,"damnhealthy",10],
+    	["Divine Relationship","You may re-roll any 1 dice roll each session.","You may re-roll any 2 dice rolls each session.","You may re-roll any 3 dice rolls each session.","You may re-roll any 4 dice rolls each session.","You may re-roll any 5 dice rolls each session.","You may re-roll any 6 dice rolls each session.",1,"divine",1],
+    	["Energy Bonus","Your Energy is increased by 10.","Your Energy is increased by 20.","Your Energy is increased by 30.","Your Energy is increased by 40.","Your Energy is increased by 50.","Your Energy is increased by 60.",1,"energybonus",10],
+    	["Extra Attacks","You have 1 extra attack and defense each round.","You have 2 extra attacks and defenses each round.","You have 3 extra attacks and defenses each round.","You have 4 extra attacks and defenses each round.","You have 5 extra attacks and defenses each round.","You have 6 extra attacks and defenses each round.",4,"extraattacks",1],
+    	["Focused Combat","Your Combat Value is increased by 1 when using a particular attack form or weapon, or during a specific condition. Put it here: ","Your Combat Value is increased by 2 when using a particular attack form or weapon, or during a specific condition. Put it here: ","Your Combat Value is increased by 3 when using a particular attack form or weapon, or during a specific condition. Put it here: ","Your Combat Value is increased by 4 when using a particular attack form or weapon, or during a specific condition. Put it here: ","Your Combat Value is increased by 5 when using a particular attack form or weapon, or during a specific condition. Put it here: ","Your Combat Value is increased by 6 when using a particular attack form or weapon, or during a specific condition. Put it here: ",1,"focusedcombat",1],
+    	["Fortified Body","Your Body Stat is increased by 1.","Your Body Stat is increased by 2.","Your Body Stat is increased by 3.","Your Body Stat is increased by 4.","Your Body Stat is increased by 5.","Your Body Stat is increased by 6.",1,"fortifiedbody",1],
+    	["Heightened Negaverse/Dark Power","You have 4 extra Negaverse/Dark Power Points.","You have 8 extra Negaverse/Dark Power Points.","You have 12 extra Negaverse/Dark Power Points.","You have 16 extra Negaverse/Dark Power Points.","You have 20 extra Negaverse/Dark Power Points.","You have 24 extra Negaverse/Dark Power Points.",1,"betterdarkpower",4],
+    	["Heightened Senses","You have a slight heightening of all senses (or twice as sharp for one single heightened sense).","Your senses are all twice as sharp (or four times as sharp for one single heightened sense).","Your senses are all three times as sharp (or six times as sharp for one single heightened sense).","Your senses are all four times as sharp (or eight times as sharp for one single heightened sense).","Your senses are all five times as sharp (or ten times as sharp for one single heightened sense).","Your senses are all six times as sharp (or twelve times as sharp for one single heightened sense).",1,0,0],
+    	["Heightened Senshi/Knight/Light Power","You have 2 extra Senshi/Knight/Light Power Points.","You have 4 extra Senshi/Knight/Light Power Points.","You have 6 extra Senshi/Knight/Light Power Points.","You have 8 extra Senshi/Knight/Light Power Points.","You have 10 extra Senshi/Knight/Light Power Points.","You have 12 extra Senshi/Knight/Light Power Points.",1,"betterlightpower",2],
+    	["Massive Damage","All damage you do in combat is increased by 5.","All damage you do in combat is increased by 10.","All damage you do in combat is increased by 15.","All damage you do in combat is increased by 20.","All damage you do in combat is increased by 25.","All damage you do in combat is increased by 30.",2,"massivedamage",5],
+    	["Powerful Mind","Your Mind Stat is increased by 1.","Your Mind Stat is increased by 2.","Your Mind Stat is increased by 3.","Your Mind Stat is increased by 4.","Your Mind Stat is increased by 5.","Your Mind Stat is increased by 6.",1,"powerfulmind",1],
+    	["Special Attack","You gain +1 to your Attack Combat Value, plus a small special attack effect.","You gain +2 to your Attack Combat Value, plus a moderate special attack effect.","You gain +3 to your Attack Combat Value, plus a large special attack effect.","You gain +4 to your Attack Combat Value, plus a major special attack effect.","You gain +5 to your Attack Combat Value, plus an extremely powerful special attack effect.","You gain +6 to your Attack Combat Value, plus a primal-powered special attack effect.",2,"specialattack",1],
+    	["Special Defense","You gain +1 to your Defense Combat Value, plus a small special defense effect.","You gain +2 to your Defense Combat Value, plus a moderate special defense effect.","You gain +3 to your Defense Combat Value, plus a large special defense effect.","You gain +4 to your Defense Combat Value, plus a major special defense effect.","You gain +5 to your Defense Combat Value, plus an extremely powerful special defense effect.","You gain +6 to your Defense Combat Value, plus a primal-powered special defense effect.",2,"specialdefense",1],
+    	["Speed","You are 1.5 times faster than an average human adult.","You are 2 times faster than an average human adult.","You are 3 times faster than an average human adult. You gain +1 to Initiative.","You are 4 times faster than an average human adult. You gain +2 to Initiative. Your Combat Value is increased by 1.","You are 5 times faster than an average human adult. You gain +3 to Initiative. Your Combat Value is increased by 1.","You are 6 times faster than an average human adult. You gain +4 to Initiative. Your Combat Value is increased by 1.",1,"speedinit",1,"speedcv",1],
+    	["Strong Soul","Your Soul Stat is increased by 1.","Your Soul Stat is increased by 2.","Your Soul Stat is increased by 3.","Your Soul Stat is increased by 4.","Your Soul Stat is increased by 5.","Your Soul Stat is increased by 6.",1,"strongsoul",1],
+    	["Supernatural Training","Your character has studied supernatural forces to a limited extene and is aware of the powers creatures can possess.","Your character can detect the presence of nearby supernatural element and can usually avoid a surprise attack. You can also identify the cause of a nearby problem or mystery if it is related to the supernatural.","Your character can detect the presence of supernatural element and can usually avoid a surprise attack. You can also identify the cause of a problem or mystery if it is related to the supernatural. These abilities have a city-wide detection range.","As well as the Level 3 abilities, you can create supernatural wards to prevent creatures from entering buildings of attacking protected humans. When thrown at supernatural beings, the wards can also exorcise creatures from possessed human souls, or confuse and disorient them.","As well as the Level 4 abilities, you can sens a supernatural creature back to the realm from which it originated. The creature remains trapped in its realm until released by a significantly more powerful force.","As well as the Level 5 abilities, you cannot be directly harmed by the supernatural creature or event. You can still be injured by indirect attacks however (such as being crushed by a collapsing building during a supernatural earthquake).",1,0,0],
+    	["Unique Character Attribute (Cost 1)","Your attribute has little character or game effect. Put it here: ","Your attribute has a moderate character or game effect. Put it here: ","Your attribute has a large character or game effect. Put it here: ","Your attribute has a major character or game effect. Put it here: ","Your attribute has an extreme effect on the character or game. Put it here: ","Your attribute has a primal effect on the character or game. Put it here: ",1,0,0],
+    	["Unique Character Attribute (Cost 2)","Your attribute has little character or game effect. Put it here: ","Your attribute has a moderate character or game effect. Put it here: ","Your attribute has a large character or game effect. Put it here: ","Your attribute has a major character or game effect. Put it here: ","Your attribute has an extreme effect on the character or game. Put it here: ","Your attribute has a primal effect on the character or game. Put it here: ",2,0,0],
+    	["Unique Character Attribute (Cost 3)","Your attribute has little character or game effect. Put it here: ","Your attribute has a moderate character or game effect. Put it here: ","Your attribute has a large character or game effect. Put it here: ","Your attribute has a major character or game effect. Put it here: ","Your attribute has an extreme effect on the character or game. Put it here: ","Your attribute has a primal effect on the character or game. Put it here: ",3,0,0],
+    	["Unique Character Attribute (Cost 4)","Your attribute has little character or game effect. Put it here: ","Your attribute has a moderate character or game effect. Put it here: ","Your attribute has a large character or game effect. Put it here: ","Your attribute has a major character or game effect. Put it here: ","Your attribute has an extreme effect on the character or game. Put it here: ","Your attribute has a primal effect on the character or game. Put it here: ",4,0,0]
+    ];
+    	
+    getAttrs(["repeating_attributes_attributeID", "repeating_attributes_attributeCost", "charPointsLeft", "freespeedlevels", "freedistractionlevels"], function(values) {
+        var newlevel = Math.max(eventInfo.newValue,1);
+        var oldlevel = eventInfo.previousValue;
+        
+        //Attribute Cost
+        var attributeTotalCost = 0;
+        var remainder = Math.max(newlevel%6,0);
+        var sixes = Math.max((newlevel-remainder)/6,0);
+        var attributeCostPerLevel = attributesList[values.repeating_attributes_attributeID][7];
+        for (var i=0; i < sixes; i++) {
+            for (var j=0; j < 6; j++) {
+                attributeTotalCost += attributeCostPerLevel*(i+1);
+            }
+        }
+        attributeTotalCost += (attributeCostPerLevel*remainder)*(i+1);
+        
+        /*if(values.repeating_attributes_attributeID == 19){
+            attributeTotalCost -= values.freespeedlevels;
+        }
+        if(values.repeating_attributes_attributeID == 4){
+            attributeTotalCost -= values.freedistractionlevels;
+        }*/
+        attributeTotalCost = Math.max(attributeTotalCost,0);
+        
+        var costdifference = attributeTotalCost - values.repeating_attributes_attributeCost;
+        
+        if(isNaN(parseInt(values.repeating_attributes_attributeCost)) == true){
+            costdifference = 0;
+        }
+        
+        //if(costdifference <= values.charPointsLeft){
+            setAttrs({
+                repeating_attributes_attributeCost: attributeTotalCost
+    		});
+    		
+    		setAttrs({
+                repeating_attributes_attributeLevel: newlevel
+            });
+    		
+    		//Attribute Bonus Stats
+    		var statbonus = {};
+    		var statbonus2 = {};
+    		var statbonusvalue = 0;
+            var statbonus2value = 0;
+            if(values.repeating_attributes_attributeID != 19 && values.repeating_attributes_attributeID != 3 &&attributesList[values.repeating_attributes_attributeID][8] != 0) {
+                statbonus[attributesList[values.repeating_attributes_attributeID][8]] = attributesList[values.repeating_attributes_attributeID][9]*newlevel;
+                setAttrs(statbonus);
+                statbonusvalue = attributesList[values.repeating_attributes_attributeID][9]*newlevel;
+            } else if (values.repeating_attributes_attributeID == 19) {
+                statbonus[attributesList[values.repeating_attributes_attributeID][8]] = Math.max((attributesList[values.repeating_attributes_attributeID][9]*newlevel)-2,0);
+                setAttrs(statbonus);
+                statbonusvalue = Math.max((attributesList[values.repeating_attributes_attributeID][9]*newlevel)-2,0);
+                
+                statbonus2[attributesList[values.repeating_attributes_attributeID][10]] = Math.floor((newlevel+2)/6);
+                setAttrs(statbonus2);
+                statbonus2value = Math.floor((newlevel+2)/6);
+            } else if (values.repeating_attributes_attributeID == 3) {
+                statbonus[attributesList[values.repeating_attributes_attributeID][8]] = Math.max((attributesList[values.repeating_attributes_attributeID][9]*newlevel)-3,0);
+                setAttrs(statbonus);
+                statbonusvalue = Math.max((attributesList[values.repeating_attributes_attributeID][9]*newlevel)-3,0);
+            }
+            
+            //Attribute Description
+            var attributesListOverleveled = [
+            "You get xxx Power Points for Senshi/Knight/Light sub-attributes.","You get xxx Power Points for Negaverse/Dark sub-attributes.","","","","Your Combat Value is increased by xxx points.","Your HP is increased by xxx.","You may re-roll any xxx dice rolls each session.","Your Energy is increased by xxx.","You have xxx extra attacks and defenses each round.","Your Combat Value is increased by xxx when using a particular attack form or weapon, or during a specific condition. Put it here: ","Your Body Stat is increased by xxx.","You have xxx extra Negaverse/Dark Power Points.","","You have xxx extra Senshi/Knight/Light Power Points.","All damage you do in combat is increased by xxx.","Your Mind Stat is increased by xxx.","You gain +xxx to your Attack Combat Value, plus a primal-powered special attack effect.","You gain +xxx to your Defense Combat Value, plus a primal-powered special defense effect.","You are zzz times faster than an average human adult. You gain +xxx to Initiative. Your Combat Value is increased by yyy.","Your Soul Stat is increased by xxx.","","","","",""];
+            descriptionProcess = "";
+            if(newlevel < 7){
+                setAttrs({
+                    repeating_attributes_attributeDesc: attributesList[values.repeating_attributes_attributeID][newlevel]
+                });
+            }else if(values.repeating_attributes_attributeID == 2 || values.repeating_attributes_attributeID == 3 || values.repeating_attributes_attributeID == 4 
+            || values.repeating_attributes_attributeID == 13 || values.repeating_attributes_attributeID == 21 || values.repeating_attributes_attributeID == 22 
+            || values.repeating_attributes_attributeID == 23 || values.repeating_attributes_attributeID == 24 || values.repeating_attributes_attributeIDe == 25){
+                setAttrs({
+                    repeating_attributes_attributeDesc:  attributesList[values.repeating_attributes_attributeID][6]
+                });
+            } else {
+                if(values.repeating_attributes_attributeID == 19){
+                    descriptionProcess = attributesListOverleveled[values.repeating_attributes_attributeID].replace("xxx",statbonusvalue);
+                    descriptionProcess = descriptionProcess.replace("yyy",statbonus2value);
+                    descriptionProcess = descriptionProcess.replace("zzz",newlevel);
+                } else {
+                    descriptionProcess = attributesListOverleveled[values.repeating_attributes_attributeID].replace("xxx",statbonusvalue);
+                }
+                setAttrs({
+                    repeating_attributes_attributeDesc: descriptionProcess
+                });
+            }
+        //} else {
+        //    setAttrs({
+        //        repeating_attributes_attributeLevel: oldlevel
+        //    });
+        //}
+    });
+});
+
+//Update light sub attribute details when level is changed and apparently this triggers when a new light sub attribute is made which makes sense
+on("change:repeating_lightsubattributes:lightsubattributelevel", function(eventInfo) {
+    var attributesList = [
+    	["Animal Guardian","The guardian is an acquaintance, offering a small advantage to the character.","The guardian is a friend, offering a moderate advantage to the character.","The guardian is a companion, offering a good advantage to the character.","The guardian is an assistant, offering a great advantage to the character.","The guardian is an protector, offering a extreme advantage to the character.","The guardian is a master guardian, offering a primal advantage to the character.",1],
+    	["Combined Attacks","Can combine attacks of Energy Points with 1 other character.","Can combine attacks or Energy Points with 2-3 characters.","Can combine attacks or Energy Points with 4-5 characters.","Can combine attacks or Energy Points with 6-7 characters.","Can combine attacks or Energy Points with 8-9 characters.","Can combine attacks or Energy Points with 10-12 characters.",1],
+    	["Elemental Control","You have little control over your Element of Influence.","You have moderate control over your Element of Influence.","You have good control over your Element of Influence.","You have great control over your Element of Influence.","You have extreme control over your Element of Influence.","You have primal control over your Element of Influence.",3],
+    	["Emotional Control","You have little control over your Emotion of Influence.","You have moderate control over your Emotion of Influence.","You have good control over your Emotion of Influence.","You have great control over your Emotion of Influence.","You have extreme control over your Emotion of Influence.","You have primal control over your Emotion of Influence.",2],
+    	["Item of Power","The item offers a small advantage to you.","The item offers a moderate advantage to you.","The item offers a good advantage to you.","The item offers a great advantage to you.","The item offers an extreme advantage to you.","The item offers a primal advantage to you.",2],
+    	["Knight Attack","An attack delivers 5 points of damage, and the opponent defends at a +1 Penalty to the dice roll. Special ability: The Knight can stop and negate any single physical attack.","An attack delivers 10 points of damage and the opponent defends at a +2 penalty to the dice roll. Special Ability: The Knight can stop any single energy-based attack. The level 1 special ability also applies.","An attack delivers 15 points of damage, and the opponent defends at a +3 penalty to the dice roll. Special ability: The attack can cut through most physical restraints (and some magical ones), or when directed at an opponent, prevent him or her from taking an action the following combat round. The level 1 and 2 special abilities also apply.","An attack delivers 20 points of damage, and the opponent defends at a +4 penatly to the dice roll. Special ability: The Knight can knock any object from the grasp of a single target, or can use any special ability from levels 1-3.","An attack delivers 30 points of damage, and the opponent defends at a +5 penalty to the dice roll. Special ability: The Knight can apply the special abilities from levels 1-4 to 2-3 targets.","An attack delivers 25 points of damage, and the opponent defends at a +6 penalty to the dice roll. Special ability: The Knight can apply the special abilities from levels 1-4 to 4-6 targets.",3],
+    	["Rejuvenation","Your current HP or EP increases by 10 points.","Your current HP or EP increases by 20 points.","Your current HP or EP increases by 30 points.","Your current HP or EP increases by 40 points.","Your current HP or EP increases by 50 points.","Your current HP or EP increases by 60 points.",1],
+    	["Sailor Senshi Attack","An attack delivers 10 points of damage or offers a small advantage to you. Opponents defend at a +1 penalty to the dice roll.","An attack delivers 30 points of damage or offers a moderate advantage to you. Opponents defend at a +2 penalty to the dice roll.","An attack delivers 60 points of damage or offers a good advantage to you. Opponents defend at a +3 penalty to the dice roll.","An attack delivers 90 points of damage or offers a great advantage to you. Opponents defend at a +4 penalty to the dice roll.","An attack delivers 120 points of damage or offers an extreme advantage to you. Opponents defend at a +5 penalty to the dice roll.","An attack delivers 150 points of damage or offers a primal advantage to you. Opponents defend at a +6 penalty to the dice roll.",4]
+    	];
+    
+    getAttrs(["repeating_lightSubAttributes_lightSubAttributeID", "repeating_lightSubAttributes_lightSubAttributeCost", "lightPointsLeft", "senshiattacktaken", "senshiattacks1", "senshiattacks2", "senshiattacks3", "senshiattacks4", "senshiattacks5", "senshiattacks6", "senshiattacks"], function(values) {
+        /*var setsenshiattacktaken = (parseInt(values.senshiattacktaken)||0);
+        setAttrs({
+            senshiattacktaken: setsenshiattacktaken
+        });
+        var setsenshiattacks1 = (parseInt(values.senshiattacks1)||0);
+        setAttrs({
+            senshiattacks1: setsenshiattacks1
+        });
+        var setsenshiattacks2 = (parseInt(values.senshiattacks2)||0);
+        setAttrs({
+            senshiattacks2: setsenshiattacks2
+        });
+        var setsenshiattacks3 = (parseInt(values.senshiattacks3)||0);
+        setAttrs({
+            senshiattacks3: setsenshiattacks3
+        });
+        var setsenshiattacks4 = (parseInt(values.senshiattacks4)||0);
+        setAttrs({
+            senshiattacks4: setsenshiattacks4
+        });
+        var setsenshiattacks5 = (parseInt(values.senshiattacks5)||0);
+        setAttrs({
+            senshiattacks5: setsenshiattacks5
+        });
+        var setsenshiattacks6 = (parseInt(values.senshiattacks6)||0);
+        setAttrs({
+            senshiattacks6: setsenshiattacks6
+        });
+        var setsenshiattacks = (parseInt(values.senshiattacks)||0);
+        setAttrs({
+            senshiattacks: setsenshiattacks
+        });
+        
+        if(values.senshiattacks6 > 0){
+            setAttrs({
+                senshiattacktaken: 6
+            });
+        }else if(values.senshiattacks5 > 0){
+            setAttrs({
+                senshiattacktaken: 5
+            });
+        }else if(values.senshiattacks4 > 0){
+            setAttrs({
+                senshiattacktaken: 4
+            });
+        }else if(values.senshiattacks3 > 0){
+            setAttrs({
+                senshiattacktaken: 3
+            });
+        }else if(values.senshiattacks2 > 0){
+            setAttrs({
+                senshiattacktaken: 2
+            });
+        }else if(values.senshiattacks1 > 0){
+            setAttrs({
+                senshiattacktaken: 1
+            });
+        }else{
+            setAttrs({
+                senshiattacktaken: 0
+            });
+        }*/
+        
+        var newlevel = Math.min(Math.max(eventInfo.newValue,1),6);
+        var oldlevel = (parseInt(eventInfo.previousValue)||-100);
+        
+        //Attribute Cost
+        var attributeCostPerLevel = attributesList[values.repeating_lightSubAttributes_lightSubAttributeID][7];
+        var newcost = attributeCostPerLevel * newlevel;
+        var oldcost = attributeCostPerLevel * oldlevel;
+        
+        /*if(values.repeating_lightSubAttributes_lightSubAttributeID == 7){
+            if(values.senshiattacktaken > 0){
+                if(newlevel == values.senshiattacktaken){
+                    newcost = (attributeCostPerLevel/2) * newlevel;
+                } else if (newlevel < values.senshiattacktaken){
+                    newcost = (attributeCostPerLevel/4) * newlevel;
+                }
+            }
+        }*/
+        
+        var costdifference = newcost - oldcost;
+        
+        if(isNaN(parseInt(values.repeating_lightSubAttributes_lightSubAttributeCost)) == true){
+            costdifference = 0;
+        }
+        
+        //if(costdifference <= values.lightPointsLeft){
+            setAttrs({
+                repeating_lightSubAttributes_lightSubAttributeCost: newcost
+    		});
+    		setAttrs({
+                repeating_lightSubAttributes_lightSubAttributeLevel: newlevel
+            });
+            
+            /*if(values.repeating_lightSubAttributes_lightSubAttributeID == 7){
+                switch(newlevel){
+                    case 1:
+                        setAttrs({
+                            senshiattacks1: Math.max(parseInt(values.senshiattacks1)+1,0)
+    	                });
+    	                break;
+                    case 2:
+                        setAttrs({
+                            senshiattacks2: Math.max(parseInt(values.senshiattacks2)+1,0)
+    	                });
+    	                break;
+                    case 3:
+                        setAttrs({
+                            senshiattacks3: Math.max(parseInt(values.senshiattacks3)+1,0)
+    	                });
+    	                break;
+                    case 4:
+                        setAttrs({
+                            senshiattacks4: Math.max(parseInt(values.senshiattacks4)+1,0)
+    	                });
+    	                break;
+                    case 5:
+                        setAttrs({
+                            senshiattacks5: Math.max(parseInt(values.senshiattacks5)+1,0)
+    	                });
+    	                break;
+                    case 6:
+                        setAttrs({
+                            senshiattacks6: Math.max(parseInt(values.senshiattacks6)+1,0)
+    	                });
+    	                break;
+                }
+                
+                switch(oldlevel){
+                    case 1:
+                        setAttrs({
+                            senshiattacks1: Math.max(parseInt(values.senshiattacks1)-1,0)
+    	                });
+    	                break;
+                    case 2:
+                        setAttrs({
+                            senshiattacks2: Math.max(parseInt(values.senshiattacks2)-1,0)
+    	                });
+    	                break;
+                    case 3:
+                        setAttrs({
+                            senshiattacks3: Math.max(parseInt(values.senshiattacks3)-1,0)
+    	                });
+    	                break;
+                    case 4:
+                        setAttrs({
+                            senshiattacks4: Math.max(parseInt(values.senshiattacks4)-1,0)
+    	                });
+    	                break;
+                    case 5:
+                        setAttrs({
+                            senshiattacks5: Math.max(parseInt(values.senshiattacks5)-1,0)
+    	                });
+    	                break;
+                    case 6:
+                        setAttrs({
+                            senshiattacks6: Math.max(parseInt(values.senshiattacks6)-1,0)
+    	                });
+    	                break;
+	                case -100:
+	                    setAttrs({
+                            senshiattacks: Math.max(parseInt(values.senshiattacks)+1,0)
+                        });
+                        break;
+                }
+            }*/
+            //Attribute Description
+            setAttrs({
+                repeating_lightSubAttributes_lightSubAttributeDesc: attributesList[values.repeating_lightSubAttributes_lightSubAttributeID][newlevel]
+            });
+        //} else {
+        //    setAttrs({
+        //        repeating_lightSubAttributes_lightSubAttributeLevel: oldlevel
+        //    });
+        //}
+    });
+});
+
+//See if you can't force senshiattacktaken to actually update
+/*on("change:senshiattacks1 change:senshiattacks2 change:senshiattacks3 change:senshiattacks4 change:senshiattacks5 change:senshiattacks6 change:senshiattacks", function() {
+    getAttrs(["senshiattacks1", "senshiattacks2", "senshiattacks3", "senshiattacks4", "senshiattacks5", "senshiattacks6", "senshiattacks"], function(values) {
+        if(values.senshiattacks6 > 0){
+            setAttrs({
+                senshiattacktaken: 6
+            });
+        }else if(values.senshiattacks5 > 0){
+            setAttrs({
+                senshiattacktaken: 5
+            });
+        }else if(values.senshiattacks4 > 0){
+            setAttrs({
+                senshiattacktaken: 4
+            });
+        }else if(values.senshiattacks3 > 0){
+            setAttrs({
+                senshiattacktaken: 3
+            });
+        }else if(values.senshiattacks2 > 0){
+            setAttrs({
+                senshiattacktaken: 2
+            });
+        }else if(values.senshiattacks1 > 0){
+            setAttrs({
+                senshiattacktaken: 1
+            });
+        }else{
+            setAttrs({
+                senshiattacktaken: 0
+            });
+        }
+        if(senshiattacks == 0){
+            setAttrs({
+                senshiattacktaken: 0
+            });
+        }
+    });
+});*/
+
+//Update dark sub attribute details when level is changed and apparently this triggers when a new dark sub attribute is made which makes sense
+on("change:repeating_darksubattributes:darksubattributelevel", function(eventInfo) {
+    var attributesList = [
+    	["Energy Drain","5 EP is drained from the victim.","10 EP is drained from the victim.","15 EP is drained from the victim.","20 EP is drained from the victim.","25 EP is drained from the victim.","30 EP is drained from the victim.",1],
+    	["Environmental Control","You have little environmental control.","You have moderate environmental control. Twice as talented as the previous level.","You have good environmental control. Twice as talented as the previous level.","You have great environmental control. Twice as talented as the previous level.","You have extreme environmental control. Twice as talented as the previous level.","You have primal environmental control. Twice as talented as the previous level.",4],
+    	["Mind Control","You possess little mind control ability. You can read a single victim's surface thoughts and plant simple, non-aggressive suggestions.","You possess moderate mind control ability. You can read a single victim's deep thoughts and plant complex, non-aggressive suggestions. Additionally, brief events can be erased from a victim's memory.","You possess good mind control ability. You have the capabilities of level 2, but can also plant aggressive suggestions. For non-aggressive suggestions only, you can control 2-6 people.","You possess great mind control ability. You have the capabilities of level 3, and can exert total control over several people (2-6) simultaneously.","You possess extreme mind control ability. You have the capabilities of level 3, and can exert total control over large groups of people (7-20) simultaneously.","You possess primal mind control ability. You have the capabilities of level 3, and can exert total control over very large groups of people (21-50) simultaneously.",2],
+    	["Negaverse Attack","Your attack delivers 10 points of damage.","Your attack delivers 20 points of damage.","Your attack delivers 30 points of damage.","Your attack delivers 40 points of damage.","Your attack delivers 50 points of damage.","Your attack delivers 60 points of damage.",4],
+    	["Negaverse Item","The item offers a small advantage to you.","The item offers a moderate advantage to you.","The item offers a good advantage to you.","The item offers a great advantage to you.","The item offers an extreme advantage to you.","The item offers a primal advantage to you.",3],
+    	["Negaverse Magic","You know how to produce 1-3 Negaverse magical effects (or spells).","You know how to produce 4-6 Negaverse magical effects (or spells).","You know how to produce 7-9 Negaverse magical effects (or spells).","You know how to produce 10-12 Negaverse magical effects (or spells).","You know how to produce 13-15 Negaverse magical effects (or spells).","You know how to produce 16-18 Negaverse magical effects (or spells).",2],
+    	["Positive Energy Deflection","You can deflect 20 points of positive energy each round. Bonus of -2 to Soul stat checks.","You can deflect 40 points of positive energy each round. Bonus of -2 to Soul stat checks.","You can deflect 60 points of positive energy each round. Bonus of -4 to Soul stat checks.","You can deflect 80 points of positive energy each round. Bonus of -4 to Soul stat checks.","You can deflect 100 points of positive energy each round. Bonus of -6 to Soul stat checks.","You can deflect 120 points of positive energy each round. Bonus of -6 to Soul stat checks.",2],
+    	["Summon/Control Servant","You can summon and control 1-2 weak servants.","You can summon and control 3-5 weak servants.","You can summon and control 6-8 weak servants or 1-2 servants of moderate power.","You can summon and control 9-12 weak servants, 3-5 servants of moderate power, or 1-2 strong servants.","You can summon and control more than 12 weak servants, 6-8 servants of moderate power, 3-5 strong servants, or 1-2 very strong.","You can summon and control 9-12 servants of moderate power, 6-8 strong servants, or 3-5 very strong.",2]
+    	];
+    	
+    getAttrs(["repeating_darkSubAttributes_darkSubAttributeID", "repeating_darkSubAttributes_darkSubAttributeCost", "darkPointsLeft"], function(values) {
+        var newlevel = Math.min(Math.max(eventInfo.newValue,1),6);
+        var oldlevel = eventInfo.previousValue;
+        
+        //Attribute Cost
+        var attributeCostPerLevel = attributesList[values.repeating_darkSubAttributes_darkSubAttributeID][7];
+        var newcost = attributeCostPerLevel * newlevel;
+        var oldcost = attributeCostPerLevel * oldlevel;
+        
+        var costdifference = newcost - oldcost;
+        
+        if(isNaN(parseInt(values.repeating_darkSubAttributes_darkSubAttributeCost)) == true){
+            costdifference = 0;
+        }
+        
+        //if(costdifference <= values.darkPointsLeft){
+            setAttrs({
+            repeating_darkSubAttributes_darkSubAttributeCost: newcost
+		    });
+            setAttrs({
+                repeating_darkSubAttributes_darkSubAttributeLevel: newlevel
+            });
+            
+            //Attribute Description
+            setAttrs({
+                repeating_darkSubAttributes_darkSubAttributeDesc: attributesList[values.repeating_darkSubAttributes_darkSubAttributeID][newlevel]
+            });
+        //} else {
+        //    setAttrs({
+        //        repeating_darkSubAttributes_darkSubAttributeLevel: oldlevel
+        //    });
+        //}
+    });
+});
+
+//Update flaw details when level is changed and apparently this triggers when a new flaw is made which makes sense
+on("change:repeating_flaws:flawlevel", function(eventInfo) {
+    var flawList = [
+    ["Ageism","You are slightly younger than average (9-13 for Sailor Scouts; 13-16 for Knights) and experience a small degree of ageism.","You are much younger than average (5-9 for Sailor Scouts; 7-12 for Knights) and experience a large degree of ageism.",0,0],
+    ["Attack Gesture","If the attack sequence is disrupted, the attack fails but you do not consume the EP you would have spent.","If the attack sequence is disrupted, the attack fails and the EP is still spent.",0,0],
+    ["Attack Restriction","Your restriction applies to very few people, or you have moderately strong reservations.","Your restriction applies to a number of people, or you have very strong reservations",0,0],
+    ["Attack Words","The attack words must be whispered or verbalized at a normal sound level.","The attack words must be yelled.",0,0],
+    ["Awkward","You are generally clumsy and accident prone.","You are very awkward. Combat Value is decreased by 1 point.","awkward",0.5],
+    ["Delicate Body","Your Body stat is decreased by 1 point.","Your Body stat is decreased by 2 points.","delicatebody",1],
+    ["Easily Distracted","You are distracted by one specific trigger, or by a broad trigger that is encountered infrequently.","You are distracted by a number of triggers, or by a one trigger that is encountered frequently.",0,0],
+    ["Empty Mind","Your Mind stat is decreased by 1 point.","Your Mind stat is decreased by 2 points.","emptymind",1],
+    ["Hollow Soul","Your Soul stat is decreased by 1 point.","Your Soul stat is decreased by 2 points.","hollowsoul",1],
+    ["Inept Combat","Your Combat Value is decreased by 1 point.","Your Combat Value is decreased by 2 points.","ineptcombat",1],
+    ["Item Dependency","One or more of your abilities are dependent on an item.","Three or more of your abilities are dependent on an item.",0,0],
+    ["Marked","The mark is easily concealable because it is small or in an inconspicuous location.","The mark is difficult to conceal because it is large or in an obvious location",0,0],
+    ["Phobia","You have a minor phobia, or one that is encoutnered infrequently.","You have a significant phobia, or one that is encountered frequently.",0,0],
+    ["Physically Unappealing","You are mildly unappealing.","You are highly unappealing.",0,0],
+    ["Powered After Transformation","You only have access to one or two Senshi/Knight/Light/Negaverse/Dark abilities before transformation.","You don't have access to any Senshi/Knight/Light/Negaverse/Dark abilities before transformation.",0,0],
+    ["Recurring Nightmares","The nightmares occure infrequently and have a small effect of your lifestyle.","The nightmares occur frequently and have a large effect on your lifestyle.",0,0],
+    ["Servitude","Serving the master is a small part of your life, allowing you to main a large amount of free will.","Serving the master is a large part of your life, allowing you to retain only a small amoutn of free will.",0,0],
+    ["Special Requirement","The special requirement is easy to obtain or is needed rarely.","The special requirement is difficult to obtain or is needed often",0,0],
+    ["Taint of the Negaverse","Your Sailor Senshi or Knight attack damage is reduced by 10 points when used against a warrior or servant of the Negaverse.","Your Sailor Senshi or Knight attack damage is reduced by 20 points when used against a warrior or servant of the Negaverse. Additionally, you may acquire Negaverse/Dark Sub-Attributes using the Power Points obtained from the Senshi/Knight/Light Powers Attribute.","lightdebuff",10],
+    ["Touched by Positive Energy","Your Negaverse attack damage is reduced by 10 points when used against a Sailor Scout, Knight or other human being.","Your Negaverse attack damage is reduced by 20 points when used against a Sailor Scout, Knight or other human being. Additonally, you may acquire Senshi/Knight/Light Sub-Attributes using the Power Points obtained from the Negaverse/Dark Powers Attribute.","darkdebuff",10],
+    ["Transformation Loss","You will lose your transformation if your heart loses its desire to fight for justice/evil.","You will lose your transformation if your heart loses its desire to fight for justice/evil. You can also have an induced transformation if a certain requirement is met.",0,0],
+    ["Unique Character Defect","The defect occurs rarely, or has a small effect on you.","The defect occurs frequently, or has a large effect on you.",0,0],
+    ["Weakened Negaverse/Dark Power","Your Power Point total is reduced by 4 points.","Your Power Point total is reduced by 8 points.","worsedarkpower",4],
+    ["Weakened Senshi/Knight/Light Power","Your Power Point total is reduced by 2 points.","Your Power Point total is reduced by 5 points.","worselightpower",2.5],
+    ];
+    	
+    getAttrs(["repeating_flaws_flawID"], function(values) {
+        var newlevel = Math.min(Math.max(eventInfo.newValue,1),2);
+        setAttrs({
+            repeating_flaws_flawLevel: newlevel
+        });
+		
+		//Flaw stat penalty
+		var statpenalty = {};
+        if(flawList[values.repeating_flaws_flawID][3] != 0) {
+            statpenalty[flawList[values.repeating_flaws_flawID][3]] = -Math.floor(flawList[values.repeating_flaws_flawID][4]*newlevel);
+            setAttrs(statpenalty);
+        }
+        
+        //Flaw Description
+        setAttrs({
+            repeating_flaws_flawDesc: flawList[values.repeating_flaws_flawID][newlevel]
+        });
+        
+    });
+});
+
+//Add up all the attributes costs
+on("change:repeating_attributes remove:repeating_attributes change:charpoints change:charpointsbonus", function() {
+    getSectionIDs("attributes", function(IDArray) {
+		var fieldNames = [];
+        for (var i=0; i < IDArray.length; i++) {
+			fieldNames.push("repeating_attributes_" + IDArray[i] + "_attributeCost");
+		}
+        var total = 0;
+        getAttrs(fieldNames, function(values) {
+			for (var i=0; i < IDArray.length; i++) {
+				total += parseInt(values["repeating_attributes_" + IDArray[i] + "_attributeCost"])||0;
+			}
+			setAttrs({
+                charPointsSpent: total
+			});
+        });
+    });
+});
+
+//Add up all the light sub attributes costs
+on("change:repeating_lightsubattributes remove:repeating_lightsubattributes change:lightpp change:betterlightpower", function() {
+    getSectionIDs("lightSubAttributes", function(IDArray) {
+		var fieldNames = [];
+        for (var i=0; i < IDArray.length; i++) {
+			fieldNames.push("repeating_lightSubAttributes_" + IDArray[i] + "_lightSubAttributeCost");
+		}
+        var total = 0;
+        getAttrs(fieldNames, function(values) {
+			for (var i=0; i < IDArray.length; i++) {
+				total += parseInt(values["repeating_lightSubAttributes_" + IDArray[i] + "_lightSubAttributeCost"])||0;
+			}
+			setAttrs({
+                lightPointsSpent: total
+			});
+        });
+    });
+});
+
+//Add up all the dark sub attributes costs
+on("change:repeating_darksubattributes remove:repeating_darksubattributes change:darkpp change:betterdarkpower", function() {
+    getSectionIDs("darkSubAttributes", function(IDArray) {
+		var fieldNames = [];
+        for (var i=0; i < IDArray.length; i++) {
+			fieldNames.push("repeating_darkSubAttributes_" + IDArray[i] + "_darkSubAttributeCost");
+		}
+        var total = 0;
+        getAttrs(fieldNames, function(values) {
+			for (var i=0; i < IDArray.length; i++) {
+				total += parseInt(values["repeating_darkSubAttributes_" + IDArray[i] + "_darkSubAttributeCost"])||0;
+			}
+			setAttrs({
+                darkPointsSpent: total
+			});
+        });
+    });
+});
+
+//Add up all the flaw bonus points
+on("change:repeating_flaws remove:repeating_flaws", function() {
+    getSectionIDs("flaws", function(IDArray) {
+		var fieldNames = [];
+        for (var i=0; i < IDArray.length; i++) {
+			fieldNames.push("repeating_flaws_" + IDArray[i] + "_flawLevel");
+		}
+        var total = 0;
+        getAttrs(fieldNames, function(values) {
+			for (var i=0; i < IDArray.length; i++) {
+				total += parseInt(values["repeating_flaws_" + IDArray[i] + "_flawLevel"])||0;
+			}
+			setAttrs({
+                flawPoints: total
+			});
+        });
+    });
+});
+
+//Remove stat bonuses when attributes are removed
+on("remove:repeating_attributes", function(eventInfo) {
+    var attributesBonusStatsList = [
+        "lightpp","darkpp",0,"freedistractionlevels",0,"combatmastery","damnhealthy","divine","energybonus","extraattacks","focusedcombat","fortifiedbody","betterdarkpower",0,"betterlightpower","massivedamage","powerfulmind","specialattack","specialdefense","speedinit","strongsoul",0,0,0,0,0];
+    var deletedAttributeRowID = eventInfo.sourceAttribute.replace("repeating_attributes_","");
+    var deletedAttributeID = eventInfo.removedInfo["repeating_attributes_" + deletedAttributeRowID + "_attributeID"];
+    var statbonusremoval = {};
+    
+    if(attributesBonusStatsList[deletedAttributeID] != 0){
+        statbonusremoval[attributesBonusStatsList[deletedAttributeID]] = 0;
+        setAttrs(statbonusremoval);
+        if(deletedAttributeID == 19){
+            setAttrs({
+                speedcv: 0
+            });
+        }
+    }
+});
+
+//Set senshiattacktaken when senshi attack is removed
+/*on("remove:repeating_lightsubattributes", function(eventInfo) {
+    var deletedAttributeRowID = eventInfo.sourceAttribute.replace("repeating_lightsubattributes_","");
+    var deletedAttributeID = eventInfo.removedInfo["repeating_lightsubattributes_" + deletedAttributeRowID + "_lightSubAttributeID"];
+    var deletedAttributeLevel = eventInfo.removedInfo["repeating_lightsubattributes_" + deletedAttributeRowID + "_lightSubAttributeLevel"];
+    
+    if(deletedAttributeID == 7){
+        getAttrs(["senshiattacktaken", "senshiattacks1", "senshiattacks2", "senshiattacks3", "senshiattacks4", "senshiattacks5", "senshiattacks6", "senshiattacks"], function(values) {
+			switch(deletedAttributeLevel){
+                case 1:
+                    setAttrs({
+                        senshiattacks1: Math.max(parseInt(values.senshiattacks1)-1,0)
+                    });
+                    break;
+                case 2:
+                    setAttrs({
+                        senshiattacks2: Math.max(parseInt(values.senshiattacks2)-1,0)
+                    });
+                    break;
+                case 3:
+                    setAttrs({
+                        senshiattacks3: Math.max(parseInt(values.senshiattacks3)-1,0)
+                    });
+                    break;
+                case 4:
+                    setAttrs({
+                        senshiattacks4: Math.max(parseInt(values.senshiattacks4)-1,0)
+                    });
+                    break;
+                case 5:
+                    setAttrs({
+                        senshiattacks5: Math.max(parseInt(values.senshiattacks5)-1,0)
+                    });
+                    break;
+                case 6:
+                    setAttrs({
+                        senshiattacks6: Math.max(parseInt(values.senshiattacks6)-1,0)
+                    });
+                    break;
+            }
+            if(values.senshiattacks6 > 0){
+                setAttrs({
+                    senshiattacktaken: 6
+                });
+            }else if(values.senshiattacks5 > 0){
+                setAttrs({
+                    senshiattacktaken: 5
+                });
+            }else if(values.senshiattacks4 > 0){
+                setAttrs({
+                    senshiattacktaken: 4
+                });
+            }else if(values.senshiattacks3 > 0){
+                setAttrs({
+                    senshiattacktaken: 3
+                });
+            }else if(values.senshiattacks2 > 0){
+                setAttrs({
+                    senshiattacktaken: 2
+                });
+            }else if(values.senshiattacks1 > 0){
+                setAttrs({
+                    senshiattacktaken: 1
+                });
+            }else{
+                setAttrs({
+                    senshiattacktaken: 0
+                });
+                setAttrs({
+                    senshiattacks: 0
+                });
+            }
+            setAttrs({
+                senshiattacks: Math.max(parseInt(values.senshiattacks)-1,0)
+            });
+            if(senshiattacks == 0){
+                setAttrs({
+                    senshiattacktaken: 0
+                });
+            }
+        });
+    }
+});*/
+
+//Remove stat penalties when flawss are removed
+on("remove:repeating_flaws", function(eventInfo) {
+    var flawPenaltiesList = [
+        0,0,0,0,"awkward","delicatebody",0,"emptymind","hollowsoul","ineptcombat",0,0,0,0,0,0,0,0,"lightdebuff","darkdebuff",0,0,"worsedarkpower","worselightpower"];
+    var deletedFlawRowID = eventInfo.sourceAttribute.replace("repeating_flaws_","");
+    var deletedFlawID = eventInfo.removedInfo["repeating_flaws_" + deletedFlawRowID + "_flawID"];
+    var statpenaltyremoval = {};
+    
+    if(flawPenaltiesList[deletedFlawID] != 0){
+        statpenaltyremoval[flawPenaltiesList[deletedFlawID]] = 0;
+        setAttrs(statpenaltyremoval);
+    }
+});
+
+</script>
